@@ -1,0 +1,41 @@
+{
+  "actions": [
+     {
+       "description": "Default Welcome Intent",
+       "name": "MAIN",
+       "fulfillment": {
+         "conversationName": "welcome"
+       },
+       "intent": {
+         "name": "actions.intent.MAIN",
+         "trigger": {
+           "queryPatterns":["talk to Jokebot"]
+         }
+       }
+     },
+   {
+       "description": "Rasa Intent",
+       "name": "TEXT",
+       "fulfillment": {
+         "conversationName": "rasa_intent"
+       },
+       "intent": {
+         "name": "actions.intent.TEXT",
+         "trigger": {
+           "queryPatterns":[]
+         }
+       }
+     }],
+   "conversations": {
+     "welcome": {
+       "name": "welcome",
+       "url": "https://8ee94a525622.ngrok.io/webhooks/google_assistant/webhook",
+       "fulfillmentApiVersion": 2
+   },
+     "rasa_intent": {
+       "name": "rasa_intent",
+       "url": "https://8ee94a525622.ngrok.io/webhooks/google_assistant/webhook",
+       "fulfillmentApiVersion": 2
+   }
+ }
+}
